@@ -65,10 +65,11 @@
 		</section>
 		<section class="section" id="chefs-section">
 			<div class="container">
-				<h2 class="chefs-title section-title">Наші найкращі <span class="accent">шеф-кухарі</span></h2>
+				<h2 class="chefs-title section-title centered">Наші найкращі <span class="accent">шеф-кухарі</span></h2>
 				<ul>
 					<li>
 						<article>
+							<img class="chef-photo" src="images/nastya-chef.jpg" alt="Nastya chef">
 							<h3 class="chef-title">Настя</h3>
 							<p class="chef-card__text">
 								Вже 10 років, я втілюю <br />
@@ -82,6 +83,7 @@
 					</li>
 					<li>
 						<article>
+							<img class="chef-photo" src="images/vlad-chef.jpg" alt="Vlad chef">
 							<h3 class="chef-title">Влад</h3>
 							<p class="chef-card__text">Привіт, я Влад!</p>
 							<p class="chef-card__text">
@@ -98,7 +100,12 @@
 		</section>
 		<section class="section" id="format-section">
 			<div class="container">
-				<h2 class="formats-title section-title">Формати</h2>
+				<h2 class="formats-title section-title centered">Формати</h2>
+				<button class="carousel-button" type="button">
+					<svg class="carousel-arrow" width="16" height="16">
+						<use href="./images/icons.svg#icon-arrow"></use>
+					</svg>
+				</button>
 				<ul class="formats-list swiper-wrapper">
 					<li class="formats-item">
 						<article class="format-card">
@@ -195,6 +202,11 @@
 						</article>
 					</li>
 				</ul>
+				<button class="carousel-button" type="button">
+					<svg class="carousel-arrow" width="16" height="16">
+						<use href="./images/icons.svg#icon-arrow"></use>
+					</svg>
+				</button>
 			</div>
 		</section>
 		<section class="section" id="contact-section">
@@ -209,7 +221,7 @@
 			</div>
 		</section>
 	</main>
-	<footer>
+	<footer class="footer">
 		<div class="container">
 			<nav>
 				<a href="index.html"><img src="images/logo.svg" alt="Логотип сучасної пекарні" /></a>
@@ -234,10 +246,18 @@
 							Стрільців 54</a>
 					</li>
 					<li>
-						<a href="#"><!-- facebook icon --></a>
+						<a href="#">
+							<svg class="addres-icon" width="32" height="32">
+								<use href="./images/icons.svg#icon-facebook"></use>
+							</svg>
+						</a>
 					</li>
 					<li>
-						<a href="#"><!-- instagram icon --></a>
+						<a href="#">
+							<svg class="addres-icon" width="32" height="32">
+								<use href="./images/icons.svg#icon-instagram"></use>
+							</svg>
+						</a>
 					</li>
 				</ul>
 				<a class="address-link" href="#" target="_blank">Політика конфіденційності</a>
