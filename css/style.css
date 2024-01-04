@@ -21,6 +21,7 @@ body {
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.5;
+	margin: 0;
 }
 
 h1,
@@ -76,6 +77,7 @@ ul {
 	border: 2px solid var(--color-brand-normal);
 	border-radius: 8px;
 	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 .button:hover {
@@ -87,6 +89,7 @@ ul {
 .link {
 	color: var(--color-primary-light);
 	text-decoration: none;
+	transition: color 0.3s;
 }
 
 .link:hover {
@@ -94,6 +97,14 @@ ul {
 }
 
 /* Header */
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 32px;
+}
+
 .header-container {
 	display: flex;
 	align-items: center;
@@ -117,7 +128,12 @@ ul {
 /* Hero section */
 .hero-section {
 	padding: 272px 0;
-	background-image: url('../images/hero-section-background@2x.jpg');
+	background-image: linear-gradient(
+		102.76deg,
+		rgba(18, 18, 17, 0.78) 2.03%,
+		rgba(18, 18, 17, 0.6) 58.46%,
+		rgba(18, 18, 17, 0) 90.36%
+	), url('../images/hero-section-background@2x.jpg');
 	background-repeat: no-repeat;
 	background-position: cente top;
 	background-size: cover;
@@ -203,13 +219,23 @@ ul {
 
 /* Chef section */
 .chefs-title {
-	max-width: 535px;
+	position: relative;
 	margin: 0 auto 80px;
+}
+
+.chefs-title::before {
+	left: 0;
+}
+
+.chefs-title::after {
+	right: 0;
 }
 
 .chefs-title::after,
 .chefs-title::before {
 	content: '';
+	position: absolute;
+	bottom: 24px;
 	display: block;
 	width: 352px;
 	border: 2px solid var(--color-brand-light);
@@ -267,7 +293,7 @@ ul {
 
 .formats-list {
 	display: flex;
-	gap: 20px;
+	gap: 16px;
 	flex-wrap: wrap;
 }
 
@@ -276,14 +302,18 @@ ul {
 }
 
 .format-card {
-	padding: 19px;
-	border: 1px solid lightgray;
+	/* padding: 19px; */
 	background-image: linear-gradient(180deg,
 			rgba(49, 38, 26, 0) 55.21%,
 			rgba(49, 38, 26, 0.71) 72.92%,
 			var(--color-primary-dark) 100%);
 	height: 444px;
 	border-radius: 16px;
+	transition: transform 0.3s;
+}
+
+.format-card:hover {
+	transform: scale(1.05);
 }
 
 .format-text {
@@ -305,6 +335,10 @@ ul {
 	border: 1px solid var(--color-primary-dark);
 	fill: var(--color-primary-dark);
 	cursor: pointer;
+}
+
+.carousel-button.next {
+	transform: rotate(180deg);
 }
 
 .carousel-button:hover {
@@ -334,12 +368,34 @@ ul {
 
 /* Footer */
 .footer {
+	position: relative;
 	background-color: var(--color-primary-dark);
 	background-image: url('../images/footer-background.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	padding: 32px 0;
+}
+
+.footer::before,
+.footer::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	background-repeat: no-repeat;
+}
+
+.footer::before {
+	width: 180px;
+	height: 120px;
+	background-image: url('../images/decor-bread-small.png');
+}
+
+.footer::after {
+	right: 0;
+	width: 380px;
+	height: 190px;
+	background-image: url('../images/decor-bread-large.png');
 }
 
 .footer-container {
@@ -379,4 +435,98 @@ ul {
 .address-copyright {
 	color: var(--color-primary-light);
 	font-size: 14px;
+}
+
+/* Modal */
+.backdrop {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 20px 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: opacity 0.3s, visibility 0.3s;
+}
+
+.backdrop.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.modal {
+	position: relative;
+	width: 100%;
+	max-width: 880px;
+	height: 100%;
+	max-height: 880px;
+	padding: 128px;
+	background-color: var(--color-primary-light);
+	border-radius: 32px;
+	overflow-y: auto;
+}
+
+.modal-btn-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 40px 40px 0 0;
+}
+
+/* Form */
+.form-field {
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.form-label {
+	position: absolute;
+	top: 16px;
+	left: 42px;
+}
+
+.form-input {
+	padding: 16px 42px;
+	width: 100%;
+	border: 1px solid var(--color-secondary-dark);
+	border-radius: 8px;
+	background-color: transparent;
+}
+
+.form-input:focus {
+	border-color: var(--color-brand-normal);
+	outline: none;
+}
+
+.form-input::placeholder {
+	font-size: 16px;
+	line-height: 1.17;
+	color: var(--color-secondary-dark);
+}
+
+.form-input:focus::placeholder {
+	color: var(--color-primary-dark);
+}
+
+.form-button {
+	display: block;
+	margin: 0 auto 24px;
+}
+
+.form-terms {
+	margin: 0 auto;
+	max-width: 220px;
+	font-size: 12px;
+	line-height: 1.5;
+	font-weight: 500;
+	text-align: center;
+}
+
+.form-terms-link {
+	color: var(--color-primary-dark);
+	text-underline-offset: 2px;
 }
