@@ -1,0 +1,132 @@
+.footer {
+  padding: 32px 0;
+  position: relative;
+  background-color: var(--color-primary-dark);
+  background-image: url('../images/footer-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: 0;
+    background-repeat: no-repeat;
+    content: '';
+  }
+
+  &::before {
+    width: 100px;
+    height: 90px;
+    right: 0;
+    background-image: url('../images/decor-bread-small-mobile.png');
+
+    @media screen and (min-width: $bp-tablet) {
+      left: 0;
+      right: auto;
+      width: 180px;
+      height: 120px;
+      background-image: url('../images/decor-bread-small.png');
+    }
+  }
+
+  &::after {
+    width: 85px;
+    height: 205px;
+    top: 0;
+    left: 0;
+    background-image: url('../images/decor-bread-large-mobile.png');
+
+    @media screen and (min-width: $bp-tablet) {
+      right: 0;
+      top: auto;
+      left: auto;
+      width: 380px;
+      height: 190px;
+      background-image: url('../images/decor-bread-large.png');
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__nav,
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row;
+      flex-basis: 50%;
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    flex-grow: 1;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+  }
+
+  &__address-list,
+  &__address-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+  }
+
+  &__address-list,
+  &__address-info {
+    flex-grow: 1;
+  }
+
+  &__address-link {
+    color: var(--color-primary-light);
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+  &__address-link:hover {
+    color: var(--color-brand-normal);
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+
+    @media screen and (min-width: $bp-tablet) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__socials-icon {
+    fill: var(--color-primary-light);
+  }
+
+  &__socials-icon:hover {
+    fill: var(--color-brand-normal);
+  }
+
+  &__address-copyright {
+    color: var(--color-secondary-dark);
+    font-size: 14px;
+  }
+}
